@@ -1,0 +1,235 @@
+---
+title: "K-Means Clustering in Soccer"
+author: "Jack Meullenet"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+The Ballon D'or is the biggest award in international soccer. Every winter, it is awarded to the overall "best" player in the world. This year's award was given on November 29, and coincidentally, I just learned about clustering in my master's program. When we talked about k-means clustering, I immediately wondered if the algorithm could tell between the "types" of soccer players.
+
+In this markdown, I will get data from FBRef, a website with all kinds of per-match data on soccer players, on each of the 30 nominees for the 2021 Ballon D'Or. I'll also show you the code to posture, analyze, and plot the resulting data.
+
+# Code Walkthrough
+
+## Setup
+
+First of all, we need to install all the necessary packages for cleaning and analysis:
+```{r, echo=TRUE, results = FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(janitor)
+library(ggplot2)
+library(stringr)
+library(stats)
+library(cluster)
+library(factoextra) 
+library(grDevices)
+library(ggrepel)
+library(here)
+```
+
+Before we do any coding, we need some libraries and some data. I went to FBRef and selected "export as CSV" from their scouting report for each of the nominees. It came out clean, but looking like it would be difficult to analyze. We want each player to be a row in a dataframe for the clustering, but it comes out like this:
+
+```{r, echo=FALSE}
+knitr::include_graphics(here("excel_example.png"), error = FALSE)
+```
+
+## Data Posturing
+
+First, we want to make a list of the names of my CSVs and add them as objects:
+```{r, echo = TRUE, results = FALSE, message=FALSE, warning=FALSE}
+temp = list.files(pattern="*.csv")
+list2env(
+  lapply(setNames(temp, make.names(gsub("*.csv$", "", temp))), 
+         read.csv), envir = .GlobalEnv)
+```
+
+Next, we make a function to clean up those random spaces, remove some unnecessary data, and transpose the whole thing to be one row:
+```{r, echo = TRUE}
+clean = function(x) {
+  x = x[-c(8,16),]
+  x = x[,-3]
+  x = t(x)
+  x = row_to_names(x, row_number = 1)
+  x = as.data.frame(x)
+}
+```
+
+Applying this function to each CSV took longer than expected because of difficulties with applying it to the whole list, so here's the first example:
+```{r, echo = TRUE, eval = FALSE}
+azpilicueta = clean(azpilicueta)
+rownames(azpilicueta) = "azpilicueta"
+```
+```{r, echo = FALSE, eval = FALSE}
+benzema = clean(benzema)
+rownames(benzema) = "benzema"
+
+messi = clean(messi)
+rownames(messi) = "messi"
+
+barella = clean(barella)
+rownames(barella) = "barella"
+
+bonucci = clean(bonucci)
+rownames(bonucci) = "bonucci"
+
+chiellini = clean(chiellini)
+rownames(chiellini) = "chiellini"
+
+debruyne = clean(debruyne)
+rownames(debruyne) = "debruyne"
+
+dias = clean(dias)
+rownames(dias) = "dias"
+
+fernandes = clean(fernandes)
+rownames(fernandes) = "fernandes"
+
+foden = clean(foden)
+rownames(foden) = "foden"
+
+haaland = clean(haaland)
+rownames(haaland) = "haaland"
+
+jorginho = clean(jorginho)
+rownames(jorginho) = "jorginho"
+
+kane = clean(kane)
+rownames(kane) = "kane"
+
+kante = clean(kante)
+rownames(kante) = "kante"
+
+kjaer = clean(kjaer)
+rownames(kjaer) = "kjaer"
+
+lewandowski = clean(lewandowski)
+rownames(lewandowski) = "lewandowski"
+
+lukaku = clean(lukaku)
+rownames(lukaku) = "lukaku"
+
+mahrez = clean(mahrez)
+rownames(mahrez) = "mahrez"
+
+martinez = clean(martinez)
+rownames(martinez) = "martinez"
+
+mbappe = clean(mbappe)
+rownames(mbappe) = "mbappe"
+
+modric = clean(modric)
+rownames(modric) = "modric"
+
+moreno = clean(moreno)
+rownames(moreno) = "moreno"
+
+mount = clean(mount)
+rownames(mount) = "mount"
+
+neymar = clean(neymar)
+rownames(neymar) = "neymar"
+
+pedri = clean(pedri)
+rownames(pedri) = "pedri"
+
+ronaldo = clean(ronaldo)
+rownames(ronaldo) = "ronaldo"
+
+salah = clean(salah)
+rownames(salah) = "salah"
+
+sterling = clean(sterling)
+rownames(sterling) = "sterling"
+
+suarez = clean(suarez)
+rownames(suarez) = "suarez"
+```
+
+Now binding everything and writing it to a csv:
+```{r, echo = TRUE, eval = FALSE}
+ballondor = rbind(azpilicueta, barella, benzema, bonucci, chiellini, debruyne, dias,
+                  fernandes, foden, haaland, jorginho, kane, kante, kjaer, lewandowski,
+                  lukaku, mahrez, martinez, mbappe, messi, modric, moreno, mount, neymar,
+                  pedri, ronaldo, salah, sterling, suarez)
+
+write.csv(ballondor, here("ballondor.csv"), row.names = TRUE)
+```
+
+## Analysis
+
+Okay, everything is in one CSV now. We have one row per player and decided to leave out Donnarumma since he's a goalkeeper - he has an entirely different set of statistics tracked for his season. Now, the actual clustering process is pretty simple.
+
+First, we read in our csv file and scale it. Scaling your data (giving it a mean of zero and turning each value into a z score) improves k-means clustering by removing scale discrepancies between variables.
+```{r, echo = TRUE}
+ballondor = read.csv(here("ballondor.csv"), row.names = 1)
+ballondor$Pass.Completion.. = as.numeric(sub("%", "", ballondor$Pass.Completion..))
+dfscale = scale(ballondor)
+```
+
+Now we can actually cluster the data and visualize it:
+```{r, echo = TRUE}
+clus = kmeans(dfscale, centers = 6, nstart = 25)
+plot = fviz_cluster(clus, data = dfscale)
+plot
+```
+
+This plot put our data into two dimensions using principal component analysis (PCA), which attempts to capture the variation in the data using linear combinations of existing variables. Dim1 and Dim2 combined explain 76.8% of the variation, so this visualization is good, but doesn't perfectly represent the actual 20-dimensional clusters.
+
+Soccer-wise, these clusters look pretty good. Now that we have our initial number of clusters, the next step is to see if there is a better number of clusters using the gap statistic. Gap measures within-cluster variation for different values of k (numbers of groups) and tries to find an "elbow" in the plot.
+```{r, echo = TRUE}
+set.seed(123)
+gap_stat = clusGap(dfscale, FUN = kmeans, nstart = 25, K.max = 9, B = 50)
+fviz_gap_stat(gap_stat)
+```
+
+The elbow isn't very clear, but 6 matches up with the soccer intuition I had already gone with. Since we have some clusters that make sense and have mathematically justified them, we can focus on getting some insights out of them. The first thing to do is profile each cluster - calculate means for each group.
+```{r, results = FALSE, message=FALSE, warning=FALSE}
+profiles = cbind(ballondor, clus$cluster)
+profilessummary = profiles %>% group_by(clus$cluster) %>% summarise_at(vars(-group_cols()), mean)
+
+#assigning a name to each cluster to look at rather than going by number
+profilessummary$clustername[profilessummary$`clus$cluster` == 1] <- 'Deep-Lying Midfielders'
+profilessummary$clustername[profilessummary$`clus$cluster` == 2] <- 'Defenders'
+profilessummary$clustername[profilessummary$`clus$cluster` == 3] <- 'Transcendent Stars'
+profilessummary$clustername[profilessummary$`clus$cluster` == 4] <- 'Attacking Midfieders'
+profilessummary$clustername[profilessummary$`clus$cluster` == 5] <- 'Tricky Attackers'
+profilessummary$clustername[profilessummary$`clus$cluster` == 6] <- 'Target Men'
+```
+
+This is great! The analysis is done, but we have to make sense of it all now. Also, I'd like to get some nicer looking plots than we have right now. To do all of this, I'll pull out the necessary data, reformat some of it, and put it into Tableau.
+```{r, echo = TRUE, results = FALSE, message=FALSE, warning=FALSE}
+plotdata = plot$data
+hulldata = plotdata %>%
+  group_by(cluster) %>%
+  slice(chull(x,y))
+
+plotdata$name = str_to_title(plotdata$name)
+
+#assigning names again for plot
+hulldata$clustername[hulldata$cluster == 5] <- 'Deep-Lying Midfielders'
+hulldata$clustername[hulldata$cluster == 1] <- 'Defenders'
+hulldata$clustername[hulldata$cluster == 6] <- 'Transcendent Stars'
+hulldata$clustername[hulldata$cluster == 3] <- 'Attacking Midfieders'
+hulldata$clustername[hulldata$cluster == 2] <- 'Tricky Attackers'
+hulldata$clustername[hulldata$cluster == 4] <- 'Target Men'
+
+#adding name column to profile data for export to tableau
+profiles$clustername[profiles$`clus$cluster` == 5] <- 'Deep-Lying Midfielders'
+profiles$clustername[profiles$`clus$cluster` == 1] <- 'Defenders'
+profiles$clustername[profiles$`clus$cluster` == 6] <- 'Transcendent Stars'
+profiles$clustername[profiles$`clus$cluster` == 3] <- 'Attacking Midfieders'
+profiles$clustername[profiles$`clus$cluster` == 2] <- 'Tricky Attackers'
+profiles$clustername[profiles$`clus$cluster` == 4] <- 'Target Men'
+
+#adding PCA coordinates to profiles, writing for export to tableau
+plotstuff = plotdata[,2:3]
+profiles = cbind(profiles, plotstuff)
+rownames(profiles) = str_to_title(rownames(profiles))
+  
+write.csv(profiles, here("profiles.csv"), row.names = TRUE)
+```
