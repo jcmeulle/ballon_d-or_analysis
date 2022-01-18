@@ -1,0 +1,1175 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20212.21.1014.1036                               -->
+<workbook original-version='18.1' source-build='2021.2.4 (20212.21.1014.1036)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Touches in Attacking Penalty Area&quot;'>
+        <calculation class='tableau' formula='&quot;Touches in Attacking Penalty Area&quot;' />
+        <members>
+          <member value='&quot;Aerials Won&quot;' />
+          <member value='&quot;Assists&quot;' />
+          <member value='&quot;Attempted Passes&quot;' />
+          <member value='&quot;Blocks&quot;' />
+          <member value='&quot;Clearances&quot;' />
+          <member value='&quot;Dribbles Completed&quot;' />
+          <member value='&quot;Interceptions&quot;' />
+          <member value='&quot;Non-Penalty Goals&quot;' />
+          <member value='&quot;Pass Completion Rate&quot;' />
+          <member value='&quot;Pressures&quot;' />
+          <member value='&quot;Progressive Carries&quot;' />
+          <member value='&quot;Progressive Passes&quot;' />
+          <member value='&quot;Progressive Passes Received&quot;' />
+          <member value='&quot;Shot-Creating Actions&quot;' />
+          <member value='&quot;Shots&quot;' />
+          <member value='&quot;Tackles&quot;' />
+          <member value='&quot;Touches in Attacking Penalty Area&quot;' />
+          <member value='&quot;xAssists&quot;' />
+          <member value='&quot;xGoals&quot;' />
+          <member value='&quot;xGoals plus xAssists&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='coords' inline='true' name='federated.0y8qrnt1acbld21bzn2b10sfherw' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='coords' name='textscan.17jrs9v1wn8s7d16il00u0sto5qn'>
+            <connection class='textscan' directory='C:/Users/jackm/Documents/funstuff/fbref' filename='coords.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.17jrs9v1wn8s7d16il00u0sto5qn' name='coords.csv' table='[coords#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='F1' ordinal='0' />
+            <column datatype='string' name='name' ordinal='1' />
+            <column datatype='real' name='x' ordinal='2' />
+            <column datatype='real' name='y' ordinal='3' />
+            <column datatype='real' name='coord' ordinal='4' />
+            <column datatype='integer' name='cluster' ordinal='5' />
+            <column datatype='string' name='clustername' ordinal='6' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.17jrs9v1wn8s7d16il00u0sto5qn' name='coords.csv' table='[coords#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='F1' ordinal='0' />
+            <column datatype='string' name='name' ordinal='1' />
+            <column datatype='real' name='x' ordinal='2' />
+            <column datatype='real' name='y' ordinal='3' />
+            <column datatype='real' name='coord' ordinal='4' />
+            <column datatype='integer' name='cluster' ordinal='5' />
+            <column datatype='string' name='clustername' ordinal='6' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[coords.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[coords.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[coords.csv_A9DF96E7AE5A490F93AFCC5814ED0C4B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[coords.csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[coords.csv_A9DF96E7AE5A490F93AFCC5814ED0C4B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[x]</local-name>
+            <parent-name>[coords.csv]</parent-name>
+            <remote-alias>x</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[coords.csv_A9DF96E7AE5A490F93AFCC5814ED0C4B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>y</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[y]</local-name>
+            <parent-name>[coords.csv]</parent-name>
+            <remote-alias>y</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[coords.csv_A9DF96E7AE5A490F93AFCC5814ED0C4B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>coord</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[coord]</local-name>
+            <parent-name>[coords.csv]</parent-name>
+            <remote-alias>coord</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[coords.csv_A9DF96E7AE5A490F93AFCC5814ED0C4B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cluster</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cluster]</local-name>
+            <parent-name>[coords.csv]</parent-name>
+            <remote-alias>cluster</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[coords.csv_A9DF96E7AE5A490F93AFCC5814ED0C4B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clustername</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[clustername]</local-name>
+            <parent-name>[coords.csv]</parent-name>
+            <remote-alias>clustername</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[coords.csv_A9DF96E7AE5A490F93AFCC5814ED0C4B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <_.fcp.ObjectModelTableType.true...column caption='coords.csv' datatype='table' name='[__tableau_internal_object_id__].[coords.csv_A9DF96E7AE5A490F93AFCC5814ED0C4B]' role='measure' type='quantitative' />
+      <column caption='Cluster' datatype='integer' name='[cluster]' role='measure' type='quantitative' />
+      <column caption='Clustername' datatype='string' name='[clustername]' role='dimension' type='nominal' />
+      <column caption='Coord' datatype='real' name='[coord]' role='measure' type='quantitative' />
+      <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal' />
+      <column caption='X' datatype='real' name='[x]' role='measure' type='quantitative' />
+      <column caption='Y' datatype='real' name='[y]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='coords.csv' id='coords.csv_A9DF96E7AE5A490F93AFCC5814ED0C4B'>
+            <properties context=''>
+              <relation connection='textscan.17jrs9v1wn8s7d16il00u0sto5qn' name='coords.csv' table='[coords#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='string' name='name' ordinal='1' />
+                  <column datatype='real' name='x' ordinal='2' />
+                  <column datatype='real' name='y' ordinal='3' />
+                  <column datatype='real' name='coord' ordinal='4' />
+                  <column datatype='integer' name='cluster' ordinal='5' />
+                  <column datatype='string' name='clustername' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='profiles' inline='true' name='federated.10g0llx12h0b3z17r91n71a100fv' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='profiles' name='textscan.12ixukk1v0vg591ehuj3w1y9omfn'>
+            <connection class='textscan' directory='C:/Users/jackm/Documents/funstuff/fbref' filename='profiles.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.12ixukk1v0vg591ehuj3w1y9omfn' name='profiles.csv' table='[profiles#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='F1' ordinal='0' />
+            <column datatype='real' name='Non.Penalty.Goals' ordinal='1' />
+            <column datatype='real' name='npxG' ordinal='2' />
+            <column datatype='real' name='Shots.Total' ordinal='3' />
+            <column datatype='real' name='Assists' ordinal='4' />
+            <column datatype='real' name='xA' ordinal='5' />
+            <column datatype='real' name='npxG.xA' ordinal='6' />
+            <column datatype='real' name='Shot.Creating.Actions' ordinal='7' />
+            <column datatype='real' name='Passes.Attempted' ordinal='8' />
+            <column datatype='real' name='Pass.Completion..' ordinal='9' />
+            <column datatype='real' name='Progressive.Passes' ordinal='10' />
+            <column datatype='real' name='Progressive.Carries' ordinal='11' />
+            <column datatype='real' name='Dribbles.Completed' ordinal='12' />
+            <column datatype='real' name='Touches..Att.Pen.' ordinal='13' />
+            <column datatype='real' name='Progressive.Passes.Rec' ordinal='14' />
+            <column datatype='real' name='Pressures' ordinal='15' />
+            <column datatype='real' name='Tackles' ordinal='16' />
+            <column datatype='real' name='Interceptions' ordinal='17' />
+            <column datatype='real' name='Blocks' ordinal='18' />
+            <column datatype='real' name='Clearances' ordinal='19' />
+            <column datatype='real' name='Aerials.won' ordinal='20' />
+            <column datatype='integer' name='clus$cluster' ordinal='21' />
+            <column datatype='string' name='clustername' ordinal='22' />
+            <column datatype='real' name='x' ordinal='23' />
+            <column datatype='real' name='y' ordinal='24' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.12ixukk1v0vg591ehuj3w1y9omfn' name='profiles.csv' table='[profiles#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='F1' ordinal='0' />
+            <column datatype='real' name='Non.Penalty.Goals' ordinal='1' />
+            <column datatype='real' name='npxG' ordinal='2' />
+            <column datatype='real' name='Shots.Total' ordinal='3' />
+            <column datatype='real' name='Assists' ordinal='4' />
+            <column datatype='real' name='xA' ordinal='5' />
+            <column datatype='real' name='npxG.xA' ordinal='6' />
+            <column datatype='real' name='Shot.Creating.Actions' ordinal='7' />
+            <column datatype='real' name='Passes.Attempted' ordinal='8' />
+            <column datatype='real' name='Pass.Completion..' ordinal='9' />
+            <column datatype='real' name='Progressive.Passes' ordinal='10' />
+            <column datatype='real' name='Progressive.Carries' ordinal='11' />
+            <column datatype='real' name='Dribbles.Completed' ordinal='12' />
+            <column datatype='real' name='Touches..Att.Pen.' ordinal='13' />
+            <column datatype='real' name='Progressive.Passes.Rec' ordinal='14' />
+            <column datatype='real' name='Pressures' ordinal='15' />
+            <column datatype='real' name='Tackles' ordinal='16' />
+            <column datatype='real' name='Interceptions' ordinal='17' />
+            <column datatype='real' name='Blocks' ordinal='18' />
+            <column datatype='real' name='Clearances' ordinal='19' />
+            <column datatype='real' name='Aerials.won' ordinal='20' />
+            <column datatype='integer' name='clus$cluster' ordinal='21' />
+            <column datatype='string' name='clustername' ordinal='22' />
+            <column datatype='real' name='x' ordinal='23' />
+            <column datatype='real' name='y' ordinal='24' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Non.Penalty.Goals</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Non.Penalty.Goals]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Non.Penalty.Goals</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>npxG</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[npxG]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>npxG</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shots.Total</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shots.Total]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Shots.Total</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Assists</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Assists]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Assists</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>xA</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[xA]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>xA</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>npxG.xA</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[npxG.xA]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>npxG.xA</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shot.Creating.Actions</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shot.Creating.Actions]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Shot.Creating.Actions</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Passes.Attempted</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Passes.Attempted]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Passes.Attempted</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pass.Completion..</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pass.Completion..]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Pass.Completion..</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Progressive.Passes</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Progressive.Passes]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Progressive.Passes</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Progressive.Carries</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Progressive.Carries]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Progressive.Carries</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Dribbles.Completed</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Dribbles.Completed]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Dribbles.Completed</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Touches..Att.Pen.</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Touches..Att.Pen.]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Touches..Att.Pen.</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Progressive.Passes.Rec</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Progressive.Passes.Rec]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Progressive.Passes.Rec</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pressures</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pressures]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Pressures</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Tackles</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Tackles]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Tackles</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Interceptions</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Interceptions]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Interceptions</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Blocks</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Blocks]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Blocks</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Clearances</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Clearances]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Clearances</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Aerials.won</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Aerials.won]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>Aerials.won</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clus$cluster</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[clus$cluster]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>clus$cluster</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clustername</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[clustername]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>clustername</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[x]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>x</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>y</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[y]</local-name>
+            <parent-name>[profiles.csv]</parent-name>
+            <remote-alias>y</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Aerials Won' datatype='real' name='[Aerials.won]' role='measure' type='quantitative' />
+      <column caption='Metric Selected' datatype='real' name='[Calculation_984318030778216449]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='CASE [Parameters].[Parameter 1]&#13;&#10;WHEN &quot;Aerials Won&quot; THEN AVG([Aerials.won])&#13;&#10;when &quot;Assists&quot; THEN AVG([Assists])&#13;&#10;WHEN &quot;Attempted Passes&quot; THEN AVG([Passes.Attempted])&#13;&#10;WHEN &quot;Blocks&quot; THEN AVG([Blocks])&#13;&#10;WHEN &quot;Clearances&quot; THEN AVG([Clearances])&#13;&#10;WHEN &quot;Dribbles Completed&quot; THEN AVG([Dribbles.Completed])&#13;&#10;WHEN &quot;Interceptions&quot; THEN AVG([Interceptions])&#13;&#10;WHEN &quot;Non-Penalty Goals&quot; THEN AVG([Non.Penalty.Goals])&#13;&#10;WHEN &quot;Pass Completion Rate&quot; THEN AVG([Pass.Completion..])&#13;&#10;WHEN &quot;Pressures&quot; THEN AVG([Pressures])&#13;&#10;WHEN &quot;Progressive Carries&quot; THEN AVG([Progressive.Carries])&#13;&#10;WHEN &quot;Progressive Passes&quot; THEN AVG([Progressive.Passes])&#13;&#10;WHEN &quot;Progressive Passes Received&quot; THEN AVG([Progressive.Passes.Rec])&#13;&#10;WHEN &quot;Shot-Creating Actions&quot; THEN AVG([Shot.Creating.Actions])&#13;&#10;WHEN &quot;Shots&quot; THEN AVG([Shots.Total])&#13;&#10;WHEN &quot;Tackles&quot; THEN AVG([Tackles])&#13;&#10;WHEN &quot;Touches in Attacking Penalty Area&quot; THEN AVG([Touches..Att.Pen.])&#13;&#10;WHEN &quot;xAssists&quot; THEN AVG([xA])&#13;&#10;WHEN &quot;xGoals&quot; THEN AVG([npxG])&#13;&#10;when &quot;xGoals plus xAssists&quot; THEN AVG([npxG.xA])&#13;&#10;END' />
+      </column>
+      <column caption='Dribbles Completed' datatype='real' name='[Dribbles.Completed]' role='measure' type='quantitative' />
+      <column caption='Player' datatype='string' name='[F1]' role='dimension' type='nominal' />
+      <column caption='Non-Penalty Goals' datatype='real' name='[Non.Penalty.Goals]' role='measure' type='quantitative' />
+      <column caption='Pass Completion Rate' datatype='real' name='[Pass.Completion..]' role='measure' type='quantitative' />
+      <column caption='Attempted Passes' datatype='real' name='[Passes.Attempted]' role='measure' type='quantitative' />
+      <column caption='Progressive Carries' datatype='real' name='[Progressive.Carries]' role='measure' type='quantitative' />
+      <column caption='Progressive Passes Received' datatype='real' name='[Progressive.Passes.Rec]' role='measure' type='quantitative' />
+      <column caption='Progressive Passes' datatype='real' name='[Progressive.Passes]' role='measure' type='quantitative' />
+      <column caption='Shot-Creating Actions' datatype='real' name='[Shot.Creating.Actions]' role='measure' type='quantitative' />
+      <column caption='Shots' datatype='real' name='[Shots.Total]' role='measure' type='quantitative' />
+      <column caption='Touches in Attacking Penalty Area' datatype='real' name='[Touches..Att.Pen.]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='profiles.csv' datatype='table' name='[__tableau_internal_object_id__].[profiles.csv_0495A99A106F4A28BBDD6982DA9C1819]' role='measure' type='quantitative' />
+      <column caption='Cluster Number' datatype='integer' name='[clus$cluster]' role='measure' type='quantitative' />
+      <column caption='Cluster Name' datatype='string' name='[clustername]' role='dimension' type='nominal' />
+      <column caption='xGoals plus xAssists' datatype='real' name='[npxG.xA]' role='measure' type='quantitative' />
+      <column caption='xGoals' datatype='real' name='[npxG]' role='measure' type='quantitative' />
+      <column caption='xAssists' datatype='real' name='[xA]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Touches in Attacking Penalty Area&quot;'>
+          <calculation class='tableau' formula='&quot;Touches in Attacking Penalty Area&quot;' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='profiles.csv' id='profiles.csv_0495A99A106F4A28BBDD6982DA9C1819'>
+            <properties context=''>
+              <relation connection='textscan.12ixukk1v0vg591ehuj3w1y9omfn' name='profiles.csv' table='[profiles#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='Non.Penalty.Goals' ordinal='1' />
+                  <column datatype='real' name='npxG' ordinal='2' />
+                  <column datatype='real' name='Shots.Total' ordinal='3' />
+                  <column datatype='real' name='Assists' ordinal='4' />
+                  <column datatype='real' name='xA' ordinal='5' />
+                  <column datatype='real' name='npxG.xA' ordinal='6' />
+                  <column datatype='real' name='Shot.Creating.Actions' ordinal='7' />
+                  <column datatype='real' name='Passes.Attempted' ordinal='8' />
+                  <column datatype='real' name='Pass.Completion..' ordinal='9' />
+                  <column datatype='real' name='Progressive.Passes' ordinal='10' />
+                  <column datatype='real' name='Progressive.Carries' ordinal='11' />
+                  <column datatype='real' name='Dribbles.Completed' ordinal='12' />
+                  <column datatype='real' name='Touches..Att.Pen.' ordinal='13' />
+                  <column datatype='real' name='Progressive.Passes.Rec' ordinal='14' />
+                  <column datatype='real' name='Pressures' ordinal='15' />
+                  <column datatype='real' name='Tackles' ordinal='16' />
+                  <column datatype='real' name='Interceptions' ordinal='17' />
+                  <column datatype='real' name='Blocks' ordinal='18' />
+                  <column datatype='real' name='Clearances' ordinal='19' />
+                  <column datatype='real' name='Aerials.won' ordinal='20' />
+                  <column datatype='integer' name='clus$cluster' ordinal='21' />
+                  <column datatype='string' name='clustername' ordinal='22' />
+                  <column datatype='real' name='x' ordinal='23' />
+                  <column datatype='real' name='y' ordinal='24' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Per 90 Stats by Cluster</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='profiles' name='federated.10g0llx12h0b3z17r91n71a100fv' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Touches in Attacking Penalty Area&quot;'>
+              <calculation class='tableau' formula='&quot;Touches in Attacking Penalty Area&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.10g0llx12h0b3z17r91n71a100fv'>
+            <column caption='Aerials Won' datatype='real' name='[Aerials.won]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Assists]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Blocks]' role='measure' type='quantitative' />
+            <column caption='Metric Selected' datatype='real' name='[Calculation_984318030778216449]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 1]&#13;&#10;WHEN &quot;Aerials Won&quot; THEN AVG([Aerials.won])&#13;&#10;when &quot;Assists&quot; THEN AVG([Assists])&#13;&#10;WHEN &quot;Attempted Passes&quot; THEN AVG([Passes.Attempted])&#13;&#10;WHEN &quot;Blocks&quot; THEN AVG([Blocks])&#13;&#10;WHEN &quot;Clearances&quot; THEN AVG([Clearances])&#13;&#10;WHEN &quot;Dribbles Completed&quot; THEN AVG([Dribbles.Completed])&#13;&#10;WHEN &quot;Interceptions&quot; THEN AVG([Interceptions])&#13;&#10;WHEN &quot;Non-Penalty Goals&quot; THEN AVG([Non.Penalty.Goals])&#13;&#10;WHEN &quot;Pass Completion Rate&quot; THEN AVG([Pass.Completion..])&#13;&#10;WHEN &quot;Pressures&quot; THEN AVG([Pressures])&#13;&#10;WHEN &quot;Progressive Carries&quot; THEN AVG([Progressive.Carries])&#13;&#10;WHEN &quot;Progressive Passes&quot; THEN AVG([Progressive.Passes])&#13;&#10;WHEN &quot;Progressive Passes Received&quot; THEN AVG([Progressive.Passes.Rec])&#13;&#10;WHEN &quot;Shot-Creating Actions&quot; THEN AVG([Shot.Creating.Actions])&#13;&#10;WHEN &quot;Shots&quot; THEN AVG([Shots.Total])&#13;&#10;WHEN &quot;Tackles&quot; THEN AVG([Tackles])&#13;&#10;WHEN &quot;Touches in Attacking Penalty Area&quot; THEN AVG([Touches..Att.Pen.])&#13;&#10;WHEN &quot;xAssists&quot; THEN AVG([xA])&#13;&#10;WHEN &quot;xGoals&quot; THEN AVG([npxG])&#13;&#10;when &quot;xGoals plus xAssists&quot; THEN AVG([npxG.xA])&#13;&#10;END' />
+            </column>
+            <column datatype='real' name='[Clearances]' role='measure' type='quantitative' />
+            <column caption='Dribbles Completed' datatype='real' name='[Dribbles.Completed]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Interceptions]' role='measure' type='quantitative' />
+            <column caption='Non-Penalty Goals' datatype='real' name='[Non.Penalty.Goals]' role='measure' type='quantitative' />
+            <column caption='Pass Completion Rate' datatype='real' name='[Pass.Completion..]' role='measure' type='quantitative' />
+            <column caption='Attempted Passes' datatype='real' name='[Passes.Attempted]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Pressures]' role='measure' type='quantitative' />
+            <column caption='Progressive Carries' datatype='real' name='[Progressive.Carries]' role='measure' type='quantitative' />
+            <column caption='Progressive Passes Received' datatype='real' name='[Progressive.Passes.Rec]' role='measure' type='quantitative' />
+            <column caption='Progressive Passes' datatype='real' name='[Progressive.Passes]' role='measure' type='quantitative' />
+            <column caption='Shot-Creating Actions' datatype='real' name='[Shot.Creating.Actions]' role='measure' type='quantitative' />
+            <column caption='Shots' datatype='real' name='[Shots.Total]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Tackles]' role='measure' type='quantitative' />
+            <column caption='Touches in Attacking Penalty Area' datatype='real' name='[Touches..Att.Pen.]' role='measure' type='quantitative' />
+            <column caption='Cluster Name' datatype='string' name='[clustername]' role='dimension' type='nominal' />
+            <column-instance column='[clustername]' derivation='None' name='[none:clustername:nk]' pivot='key' type='nominal' />
+            <column caption='xGoals plus xAssists' datatype='real' name='[npxG.xA]' role='measure' type='quantitative' />
+            <column caption='xGoals' datatype='real' name='[npxG]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_984318030778216449]' derivation='User' name='[usr:Calculation_984318030778216449:qk]' pivot='key' type='quantitative' />
+            <column caption='xAssists' datatype='real' name='[xA]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.10g0llx12h0b3z17r91n71a100fv].[usr:Calculation_984318030778216449:qk]' scope='rows' value='true' />
+            <format attr='title' class='0' field='[federated.10g0llx12h0b3z17r91n71a100fv].[usr:Calculation_984318030778216449:qk]' scope='rows' value=' ' />
+            <format attr='width' field='[federated.10g0llx12h0b3z17r91n71a100fv].[usr:Calculation_984318030778216449:qk]' value='40' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.10g0llx12h0b3z17r91n71a100fv].[none:clustername:nk]' value='200' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[Parameters].[Parameter 1]' value='-90' />
+            <format attr='display' field='[Parameters].[Parameter 1]' value='true' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([Parameters].[Parameter 1] * [federated.10g0llx12h0b3z17r91n71a100fv].[usr:Calculation_984318030778216449:qk])</rows>
+        <cols>[federated.10g0llx12h0b3z17r91n71a100fv].[none:clustername:nk]</cols>
+      </table>
+      <simple-id uuid='{E8C97E4E-27EC-4C9B-A899-F05B23B7A3E8}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Ballon D&apos;Or Nominees Plotted by Principal Component Analysis (PCA)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='profiles' name='federated.10g0llx12h0b3z17r91n71a100fv' />
+          </datasources>
+          <datasource-dependencies datasource='federated.10g0llx12h0b3z17r91n71a100fv'>
+            <column datatype='real' name='[Assists]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Blocks]' role='measure' type='quantitative' />
+            <column caption='Player' datatype='string' name='[F1]' role='dimension' type='nominal' />
+            <column caption='Non-Penalty Goals' datatype='real' name='[Non.Penalty.Goals]' role='measure' type='quantitative' />
+            <column caption='Progressive Carries' datatype='real' name='[Progressive.Carries]' role='measure' type='quantitative' />
+            <column-instance column='[Assists]' derivation='Attribute' name='[attr:Assists:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Blocks]' derivation='Attribute' name='[attr:Blocks:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[F1]' derivation='Attribute' name='[attr:F1:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Non.Penalty.Goals]' derivation='Attribute' name='[attr:Non.Penalty.Goals:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Progressive.Carries]' derivation='Attribute' name='[attr:Progressive.Carries:qk]' pivot='key' type='quantitative' />
+            <column caption='Cluster Name' datatype='string' name='[clustername]' role='dimension' type='nominal' />
+            <column-instance column='[F1]' derivation='None' name='[none:F1:nk]' pivot='key' type='nominal' />
+            <column-instance column='[clustername]' derivation='None' name='[none:clustername:nk]' pivot='key' type='nominal' />
+            <column-instance column='[x]' derivation='None' name='[none:x:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[y]' derivation='None' name='[none:y:qk]' pivot='key' type='quantitative' />
+            <column datatype='real' name='[x]' role='measure' type='quantitative' />
+            <column datatype='real' name='[y]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.10g0llx12h0b3z17r91n71a100fv].[none:x:qk]' scope='cols' value='PCA 1' />
+            <format attr='title' class='0' field='[federated.10g0llx12h0b3z17r91n71a100fv].[none:y:qk]' scope='rows' value='PCA 2' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.10g0llx12h0b3z17r91n71a100fv].[none:clustername:nk]' />
+              <text column='[federated.10g0llx12h0b3z17r91n71a100fv].[none:F1:nk]' />
+              <tooltip column='[federated.10g0llx12h0b3z17r91n71a100fv].[attr:F1:nk]' />
+              <tooltip column='[federated.10g0llx12h0b3z17r91n71a100fv].[attr:Blocks:qk]' />
+              <tooltip column='[federated.10g0llx12h0b3z17r91n71a100fv].[attr:Non.Penalty.Goals:qk]' />
+              <tooltip column='[federated.10g0llx12h0b3z17r91n71a100fv].[attr:Assists:qk]' />
+              <tooltip column='[federated.10g0llx12h0b3z17r91n71a100fv].[attr:Progressive.Carries:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Player:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.10g0llx12h0b3z17r91n71a100fv].[attr:F1:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Cluster Name:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.10g0llx12h0b3z17r91n71a100fv].[none:clustername:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Blocks:&#9;</run>
+                <run bold='true'><![CDATA[ <[federated.10g0llx12h0b3z17r91n71a100fv].[attr:Blocks:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Non-Penalty Goals:&#9;</run>
+                <run bold='true' fontcolor='#000000'><![CDATA[<[federated.10g0llx12h0b3z17r91n71a100fv].[attr:Non.Penalty.Goals:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Assists:&#9;</run>
+                <run bold='true' fontcolor='#000000'><![CDATA[<[federated.10g0llx12h0b3z17r91n71a100fv].[attr:Assists:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Progressive Carries:&#9;</run>
+                <run bold='true' fontcolor='#000000'><![CDATA[<[federated.10g0llx12h0b3z17r91n71a100fv].[attr:Progressive.Carries:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='cell'>
+                <format attr='wrap' value='auto' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='8' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='shape' value=':filled/circle' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.10g0llx12h0b3z17r91n71a100fv].[none:y:qk]</rows>
+        <cols>[federated.10g0llx12h0b3z17r91n71a100fv].[none:x:qk]</cols>
+      </table>
+      <simple-id uuid='{16B2EE24-B2D8-4261-8FEC-2EC07191E33D}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='51'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='153'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[Parameters].[Parameter 1]</field>
+            <field>[federated.10g0llx12h0b3z17r91n71a100fv].[none:clustername:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{505FE515-B4A6-42E0-B34C-06CCE4614C4E}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='244'>
+            <card pane-specification-id='0' param='[federated.10g0llx12h0b3z17r91n71a100fv].[none:clustername:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.10g0llx12h0b3z17r91n71a100fv].[none:F1:nk]</field>
+            <field>[federated.10g0llx12h0b3z17r91n71a100fv].[none:clustername:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{F36F3FF5-85AD-4A83-823B-C4B85C003A22}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAASXUlEQVR4nO3dyXIb233H8W8PmGeQ4ChRlCiKkizZvrfK5bgyOPbCi6QqL5GHyCaLu8sr
+      uCrbvIA3TsVxZWMn5Tg3d5JESZxJcAAHzEMDPWaha10hICUKogAC/f+sJBa6+W+gfzinD/uc
+      VjzP8xDCp9RhFyDEMOl/+kej0cBxnL531G63CYfDV1KUEIPyOgDxePyDd5ZKpT54H0IMknSB
+      hK9JAISvSQCEr0kAhK9JAISvSQCEr0kAhK9JAISv9RUAz3NYW33Ks+drOHIrkRhhfQXAbRVp
+      qikSWptSw77qmoQYGP3dL+nlKgGsxgFnONy54eE4Dq7rYtsSBjFa+guAY+F6AA6246FpGqqq
+      out97U6IoVGuaj5AtVqVm+HEyJFRIOFrEgDhaxIA4WsSAOFrEgDhaxIA4WsSAOFrEgDhaxIA
+      4WsSAOFrEgDhaxIA4WsSAOFrEgDhaxIA4WsSAOFrfU3hsk2Dw8IJHiozs3OEAtpV1yXEQPTV
+      AqhagGx2gvLxAaZ71SUJMTh9tQCqphMNqRBOEw+qMilejKy+Z7HvbG5y684KiqLIpHgxsvo+
+      Y7MzN0nFgldZixAD13cA0un0VdYhxFDIMKjwNQmA8DUJgPA1GbYRvlBptNk+Kvf8XAIgfOHF
+      3hn/9C+/7/m5dIGEr0kAhK9JAISvSQCEr0kAhK9JAISvSQCEr0kAhK9JAISvSQCEr/XcCuE6
+      Nu2OCShEImEURRlCWUIMRk8Anj39hkq9haoH+cmPf8S5p7/nsfrkK5RgnOV7y+jSjogR1ROA
+      aDyFrmpU2hdPcO9U9inUPaazLh4ejuPiea+eGC/EdeS65y9f0hOAmVyW7QObu7cnUM7//kdR
+      FCZn5piPttgrVLkzm0JRFFRVmgJxPakXdOV7ArC5vQt6kFLxjInsxLnXAMH0HOHDZ+w1YfnB
+      4uvXyPWCuLYuG4B0PMLmfoHc1NxF2wAq9x4+vsLqhBiOngAYlsdf/9VP33LyCzE+ejrtXrvG
+      H7/4ihfr23ieN4yahBiYngDc/+GPWLk1i2Vbw6hHiIHq6gJtrT2l3vYoVur87C9/AheMAr2v
+      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
+      +6Da3tf/ATuE+bVZ49HYAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
